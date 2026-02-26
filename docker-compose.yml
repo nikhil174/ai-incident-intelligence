@@ -48,7 +48,7 @@ services:
     build: ./services/processor-service
     depends_on: [kafka, mongodb, elasticsearch]
     ports:
-      - "8082:8082"
+      - "6002:6002"
     environment:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       SPRING_DATA_MONGODB_URI: mongodb://root:root@mongodb:27017/events_db?authSource=admin

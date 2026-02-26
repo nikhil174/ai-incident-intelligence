@@ -46,7 +46,7 @@ docker compose up -d
 
 ### Health checks
 - Ingestion: `http://localhost:8081/actuator/health`
-- Processor: `http://localhost:8082/actuator/health`
+- Processor: `http://localhost:6002/actuator/health`
 - Incident: `http://localhost:8083/actuator/health`
 - AI service: `http://localhost:8090/health`
 
