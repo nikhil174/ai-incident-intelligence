@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: incident-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/incident_db
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8083
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
