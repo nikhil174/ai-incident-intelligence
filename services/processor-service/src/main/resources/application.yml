@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: processor-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: processor-group
+  data:
+    mongodb:
+      uri: mongodb://root:root@localhost:27017/events_db?authSource=admin
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+app:
+  kafka:
+    raw-topic: raw-events
+    enriched-topic: enriched-events
+  elasticsearch:
+    url: http://localhost:9200
