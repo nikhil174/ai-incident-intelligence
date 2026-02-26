@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: AI Incident Intelligence API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8083
+paths:
+  /api/incidents:
+    get:
+      summary: List incidents
+      parameters:
+        - in: query
+          name: status
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create incident
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncidentRequest'
+      responses:
+        '201':
+          description: Created
+  /api/incidents/{id}:
+    get:
+      summary: Get incident by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    IncidentRequest:
+      type: object
+      required: [incidentKey, serviceName, severity, summary]
+      properties:
+        incidentKey:
+          type: string
+        serviceName:
+          type: string
+        severity:
+          type: string
+        summary:
+          type: string
