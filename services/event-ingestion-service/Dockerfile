@@ -7,5 +7,5 @@ RUN mvn -q -DskipTests package
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /build/target/event-ingestion-service-1.0.0.jar app.jar
-EXPOSE 8081
+EXPOSE 6001
 ENTRYPOINT ["java", "-jar", "app.jar"]

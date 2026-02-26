@@ -45,15 +45,15 @@ docker compose up -d
 ```
 
 ### Health checks
-- Ingestion: `http://localhost:8081/actuator/health`
+- Ingestion: `http://localhost:6001/actuator/health`
 - Processor: `http://localhost:6002/actuator/health`
-- Incident: `http://localhost:8083/actuator/health`
-- AI service: `http://localhost:8090/health`
+- Incident: `http://localhost:6003/actuator/health`
+- AI service: `http://localhost:6004/health`
 
 ## Example API Flow
 1. Post an event to ingestion:
 ```bash
-curl -X POST http://localhost:8081/api/events \
+curl -X POST http://localhost:6001/api/events \
   -H 'Content-Type: application/json' \
   -d '{
     "serviceName": "checkout-service",
@@ -65,7 +65,7 @@ curl -X POST http://localhost:8081/api/events \
 ```
 2. Search incidents:
 ```bash
-curl http://localhost:8083/api/incidents?status=OPEN
+curl http://localhost:6003/api/incidents?status=OPEN
 ```
 
 ## Resume-ready Highlights

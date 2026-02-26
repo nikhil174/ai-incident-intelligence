@@ -40,7 +40,7 @@ services:
     build: ./services/event-ingestion-service
     depends_on: [kafka]
     ports:
-      - "8081:8081"
+      - "6001:6001"
     environment:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
 
@@ -58,7 +58,7 @@ services:
     build: ./services/incident-service
     depends_on: [mysql, redis]
     ports:
-      - "8083:8083"
+      - "6003:6003"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/incident_db
       SPRING_DATASOURCE_USERNAME: app
@@ -68,4 +68,4 @@ services:
   ai-analysis-service:
     build: ./services/ai-analysis-service
     ports:
-      - "8090:8090"
+      - "6004:6004"
