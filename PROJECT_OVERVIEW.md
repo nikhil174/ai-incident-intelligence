@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [Why This Project](#why-this-project)
+- [About](#about)
 - [Architecture](#architecture)
 - [Tech Stack](#tech-stack)
 - [Service Breakdown](#service-breakdown)
@@ -19,7 +19,7 @@
 
 ---
 
-## Why This Project
+## About
 
 Modern distributed systems generate millions of events per hour — logs, traces, alerts. Manual triage is slow, noisy, and error-prone. This platform solves that by:
 
